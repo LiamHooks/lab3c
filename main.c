@@ -8,27 +8,27 @@
 #include <readline/readline.h>
 #include <stdlib.h>
 
-int main(void) {
-  int sum_n(int n);
+int sum_n(int n)
   {
-    int n;
     if (n == 0)
       return 0;
     else
     return(sum_n(n-1) + n);
   }
 
-  void print_n(const char *s, int n);
+  void print_n(const char *s, int n)
   {
-    int n;
-    char *s;
-    if (n != 0)
-      printf("s");
+    if (n != 0){
+      printf("%s\n",s);
       print_n(s, n - 1);
+    }
   }
 
+int main(void) 
+{
   char *num = readline("Enter an int: ");
-  int numchange = strtod(num, NULL);
-  sum_n(numchange);
-  char *gradeInput = (readline("Enter a string: "));
+  int numChange = strtod(num, NULL);
+  printf("sum is %d.\n",sum_n(numChange));
+  char *str = readline("Enter a string: ");
+  print_n(str, numChange);
 }
